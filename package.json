@@ -65,6 +65,7 @@
         "@myst-theme/frontmatter": "^0.1.26",
         "@myst-theme/providers": "^0.1.26",
         "@types/markdown-it": "^12.2.3",
+        "citation-js-utils": "^0.0.11",
         "katex": "^0.15.2",
         "myst-ext-card": "^0.0.4",
         "myst-ext-grid": "^0.0.4",
