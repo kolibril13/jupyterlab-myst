@@ -13,8 +13,8 @@ import {
   RRIDTransformer,
   linksPlugin,
   ReferenceState,
-  getFrontmatter,
-  htmlPlugin
+  getFrontmatter
+  // htmlPlugin
 } from 'myst-transforms';
 import { unified } from 'unified';
 import { VFile } from 'vfile';
@@ -57,15 +57,15 @@ export function markdownParse(text: string): Root {
   // This is consistent with the current Jupyter markdown renderer
   unified()
     .use(basicTransformationsPlugin)
-    .use(htmlPlugin, {
-      htmlHandlers: {
-        comment(h: any, node: any) {
-          const result = h(node, 'comment');
-          (result as any).value = node.value;
-          return result;
-        }
-      }
-    })
+    // .use(htmlPlugin, {
+    //   htmlHandlers: {
+    //     comment(h: any, node: any) {
+    //       const result = h(node, 'comment');
+    //       (result as any).value = node.value;
+    //       return result;
+    //     }
+    //   }
+    // })
     .runSync(mdast as any);
   // Lift children out of blocks for the next step
   // We are working here as one cell at a time

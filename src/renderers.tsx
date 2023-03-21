@@ -9,5 +9,9 @@ export const renderers: Record<string, NodeRenderer> = {
   mermaid: MermaidNodeRenderer,
   inlineExpression: (node, children) => {
     return <InlineRenderer value={node.value} />;
+  },
+  html: (node, children) => {
+    // TODO: This needs to be sanitized properly
+    return <span dangerouslySetInnerHTML={{ __html: node.value }}></span>;
   }
 };
